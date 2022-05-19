@@ -3,7 +3,7 @@ import { fetchMessages } from './api';
 import MessageModel from '../MessageModel';
 import { ApiMessage } from '../types';
 
-class AllMessagesCollection extends EventTarget {
+export class AllMessagesCollection extends EventTarget {
     private collection: MessageModel[];
 
     constructor() {
@@ -23,10 +23,6 @@ class AllMessagesCollection extends EventTarget {
     }
 
     public async requestMessages() {
-        if (this.getMessages().length > 0) {
-            return;
-        }
-
         const messages = await fetchMessages();
 
         this.collection = messages.map((message) => new MessageModel(message));

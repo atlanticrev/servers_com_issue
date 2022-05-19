@@ -8,7 +8,10 @@
   "jsxBracketSameLine": false,
   "overrides": [
     {
-      "files": [".*rc", "*.json"],
+      "files": [
+        ".*rc",
+        "*.json"
+      ],
       "options": {
         "printWidth": 240,
         "tabWidth": 4

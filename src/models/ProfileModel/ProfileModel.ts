@@ -2,9 +2,9 @@ import { fetchProfile } from './api';
 
 import { ApiMessage } from '../types';
 
-import { ProfileMessagesCollection } from '../ProfileMessagesCollection';
+import ProfileMessagesCollection from '../ProfileMessagesCollection';
 
-class ProfileModel extends EventTarget {
+export class ProfileModel extends EventTarget {
     private username: string;
     private imgUrl: string;
     private email: string;
@@ -14,6 +14,8 @@ class ProfileModel extends EventTarget {
         super();
 
         this.username = '';
+        this.imgUrl = '';
+        this.email = '';
         this.messages = new ProfileMessagesCollection();
     }
 
@@ -50,10 +52,6 @@ class ProfileModel extends EventTarget {
     }
 
     public async requestProfileMessages() {
-        if (this.messages.getMessages().length > 0) {
-            return;
-        }
-
         await this.messages.requestMessages();
 
         this.dispatchEvent(new CustomEvent('ProfileModel.profileMessagesUpdate'));

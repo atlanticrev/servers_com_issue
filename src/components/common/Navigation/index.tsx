@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
-import Button from '../Button/Button';
+import Button from '../Button';
 
 const Navigation = () => {
     return (

@@ -1,6 +1,9 @@
 import { useEffect, useReducer } from 'react';
 
-const useModelSubscription = (model: any, event: string) => {
+import { ProfileModel } from '../ProfileModel/ProfileModel';
+import { AllMessagesCollection } from '../AllMessagesCollection';
+
+const useModelSubscription = (model: ProfileModel | AllMessagesCollection, event: string) => {
     const [_, forceUpdate] = useReducer((x) => x + 1, 0);
 
     useEffect(() => {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import MessageList from '../../common/MessageList';
 import PageContainer from '../../common/PageContainer';
 import Toolbar from '../../common/Toolbar';
-import Button from '../../common/Button/Button';
+import Button from '../../common/Button';
 
 import profileModel from '../../../models/ProfileModel/ProfileModel';
 import allMessagesCollection from '../../../models/AllMessagesCollection';

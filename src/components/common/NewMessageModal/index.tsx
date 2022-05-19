@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import ModalContainer from './components/ModalContainer';
-import Button from '../Button/Button';
 import Overlay from '../Overlay';
 import TextareaWithCounter from '../TextareaWithCounter';
+import Button from '../Button';
 
 import styles from './styles.modules.css';
 

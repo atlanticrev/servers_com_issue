@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Button from '../Button/Button';
+import Button from '../Button';
 import Input from '../Input';
 
 import styles from './styles.module.css';
@@ -17,13 +17,13 @@ const FilterPanel: React.FC<FilterPanelProps> = (props) => {
     };
 
     const onApplyFilter = () => {
-        onFilterApplied && onFilterApplied(filterText);
+        onFilterApplied(filterText);
     };
 
     const onResetFilter = () => {
         setFilterText('');
 
-        onFilterApplied && onFilterApplied('');
+        onFilterApplied('');
     };
 
     return (

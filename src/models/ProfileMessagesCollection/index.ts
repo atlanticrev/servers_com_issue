@@ -4,7 +4,7 @@ import { fetchMessages } from './api';
 
 import { ApiMessage } from '../types';
 
-export class ProfileMessagesCollection extends EventTarget {
+export default class ProfileMessagesCollection extends EventTarget {
     private collection: MessageModel[];
 
     constructor() {
@@ -22,16 +22,8 @@ export class ProfileMessagesCollection extends EventTarget {
     }
 
     public async requestMessages() {
-        if (this.getMessages().length > 0) {
-            return;
-        }
-
         const messages = await fetchMessages();
 
         this.collection = messages.map((message) => new MessageModel(message));
     }
 }
-
-const profileMessagesCollection = new ProfileMessagesCollection();
-
-export default profileMessagesCollection;

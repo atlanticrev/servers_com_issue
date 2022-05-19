@@ -1,3 +1,3 @@
 export type FilterPanelProps = {
-    onFilterApplied?: (filterValue: string) => void;
+    onFilterApplied: (filterValue: string) => void;
 };
