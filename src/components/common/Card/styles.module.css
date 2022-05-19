@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    gap: 30px;
+    border: 1px solid black;
+    padding: 20px 25px;
+    box-shadow: var(--main-box-shadow);
+    background-color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card_vertical {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.card_horizontal {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

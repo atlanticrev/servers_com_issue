@@ -7,9 +7,9 @@
 # git
 git init;
 touch .gitignore;
-echo ".idea
+echo '.idea
 /node_modules/
-dist" >./.gitignore;
+dist' >./.gitignore;
 
 
 
@@ -68,7 +68,12 @@ module.exports = {
                         },
                     },
                     // 'style-loader', // use it to put styles in <style> tag
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
                     'resolve-url-loader',
                     {
                         loader: 'sass-loader',
@@ -123,7 +128,7 @@ npm install --save-dev typescript ts-loader;
 # TypeScript config
 touch tsconfig.json;
 
-echo "{
+echo '{
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
@@ -131,15 +136,19 @@ echo "{
     "target": "es6",
     "jsx": "react",
     "allowJs": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   }
-}" > tsconfig.json;
+}' > tsconfig.json;
 
 
 
 # For transpiling JSX, installing babel-loader
 
 npm install --save react react-dom;
+npm install --save-dev @types/react;
+npm install --save-dev @types/react-dom;
+
 npm install --save-dev @babel/core babel-loader @babel/preset-env @babel/preset-react;
 
 touch .babelrc
@@ -165,7 +174,7 @@ npm install --save-dev file-loader;
 # HTML template
 touch index.html
 
-echo "<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -174,14 +183,14 @@ echo "<!DOCTYPE html>
 <body>
     <div id="root"></div>
 </body>
-</html>" > ./index.html;
+</html>' > ./index.html;
 
 
 
 # Prettier
 touch .prettierrc;
 
-echo "{
+echo '{
   "singleQuote": true,
   "tabWidth": 4,
   "printWidth": 120,
@@ -199,7 +208,7 @@ echo "{
     }
   ]
 }
-" > .prettierrc;
+' > .prettierrc;
 
 
 

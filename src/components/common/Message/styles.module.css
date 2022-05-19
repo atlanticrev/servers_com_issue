@@ -1,0 +1,19 @@
+.message-container {
+    width: 600px;
+    height: 400px;
+}
+
+.author-block {
+    font-size: 2rem;
+}
+
+.text-block {
+    font-size: 1.2rem;
+    font-weight: normal;
+    overflow-wrap: anywhere;
+}
+
+.date-block {
+    font-size: 1.4rem;
+    font-weight: normal;
+}

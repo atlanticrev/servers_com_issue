@@ -1,0 +1,12 @@
+.list {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.list-item {
+    list-style-type: none;
+}
+

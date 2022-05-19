@@ -1,0 +1,12 @@
+.toolbar-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid dimgray;
+    border-radius: 10px;
+    background-color: slategray;
+}

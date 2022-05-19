@@ -1,0 +1,32 @@
+.modal-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+    min-width: 500px;
+    min-height: 400px;
+    background-color: gray;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.modal-title {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 2rem;
+    text-shadow: var(--main-text-shadow-dark);
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-actions {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}

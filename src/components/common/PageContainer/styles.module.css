@@ -1,0 +1,15 @@
+.page {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px;
+}
+
+.page-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: var(--main-text-shadow-dark);
+}
