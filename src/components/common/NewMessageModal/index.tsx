@@ -1,17 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import ModalContainer from './components/ModalContainer';
 import Button from '../Button/Button';
-
-import styles from './styles.modules.css';
-
-import { ModalProps } from './types';
-
-import profileModel from '../../../models/ProfileModel/ProfileModel';
 import Overlay from '../Overlay';
 import TextareaWithCounter from '../TextareaWithCounter';
 
-const Modal: React.FC<ModalProps> = (props) => {
+import styles from './styles.modules.css';
+
+import profileModel from '../../../models/ProfileModel/ProfileModel';
+
+import { NewMessageModalProps } from './types';
+
+const NewMessageModal: React.FC<NewMessageModalProps> = (props) => {
     const { title = 'Modal title placeholder', isOpen, onClose, onApply } = props;
 
     const [message, setMessage] = useState('');
@@ -51,7 +51,7 @@ const Modal: React.FC<ModalProps> = (props) => {
                     </div>
 
                     <div className={styles['modal-content']}>
-                        <TextareaWithCounter text={message} onChange={onMessageChange} />
+                        <TextareaWithCounter text={message} onChange={onMessageChange} maxLength={200} />
                     </div>
 
                     <div className={styles['modal-actions']}>
@@ -64,4 +64,4 @@ const Modal: React.FC<ModalProps> = (props) => {
     ) : null;
 };
 
-export default Modal;
+export default NewMessageModal;

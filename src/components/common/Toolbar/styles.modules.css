@@ -1,7 +1,7 @@
 .toolbar-container {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     gap: 8px;
     width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type CardProps = {
-    orientation: 'vertical' | 'horizontal';
+    orientation?: 'vertical' | 'horizontal';
     children?: React.ReactNode;
     className?: string;
 };

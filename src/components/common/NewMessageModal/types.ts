@@ -1,6 +1,6 @@
 import { ApiMessage } from '../../../models/types';
 
-export type ModalProps = {
+export type NewMessageModalProps = {
     title?: string;
     isOpen: boolean;
     onClose: () => void;

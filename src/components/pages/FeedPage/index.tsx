@@ -4,13 +4,14 @@ import MessageList from '../../common/MessageList';
 import PageContainer from '../../common/PageContainer';
 import Toolbar from '../../common/Toolbar';
 import Button from '../../common/Button/Button';
-import Modal from '../../common/Modal';
 
 import profileModel from '../../../models/ProfileModel/ProfileModel';
 import allMessagesCollection from '../../../models/AllMessagesCollection';
 import useModelSubscription from '../../../models/hooks/useModelSubscription';
 
 import { ApiMessage } from '../../../models/types';
+import NewMessageModal from '../../common/NewMessageModal';
+import FilterPanel from '../../common/FilterPanel';
 
 const FEED_PAGE_NAME = 'Feed page';
 
@@ -22,6 +23,12 @@ const FeedPage = () => {
     }, []);
 
     const [isNewMessageModalOpen, setIsNewMessageModalOpen] = useState(false);
+
+    const [filterValue, setFilterValue] = useState('');
+
+    const onFilterApplied = (filterValue: string) => {
+        setFilterValue(filterValue);
+    };
 
     const toggleNewMessageModal = () => {
         setIsNewMessageModalOpen((isNewMessageModalOpen) => !isNewMessageModalOpen);
@@ -38,11 +45,13 @@ const FeedPage = () => {
         <PageContainer title={FEED_PAGE_NAME}>
             <Toolbar>
                 <Button title="Add new message" onClick={toggleNewMessageModal} />
+
+                <FilterPanel onFilterApplied={onFilterApplied} />
             </Toolbar>
 
-            <MessageList messages={messages} />
+            <MessageList messages={messages} filterValue={filterValue} />
 
-            <Modal
+            <NewMessageModal
                 title="Please, input message text"
                 isOpen={isNewMessageModalOpen}
                 onClose={toggleNewMessageModal}
